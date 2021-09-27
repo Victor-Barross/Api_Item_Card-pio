@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExemploApiItemCardapio</name>
+    </assembly>
+    <members>
+        <member name="M:ExemploApiItemCardapio.Controllers.V1.ItensController.Obter(System.Int32,System.Int32)">
+            <summary>
+            Buscar todos os itens no cardápio de forma paginada
+            </summary>
+            <remarks>
+            Não é possível retornar os itens no cardápio sem paginação
+            </remarks>
+            <param name="pagina">Indica qual página está sendo consultada. Mínimo 1</param>
+            <param name="quantidade">Indica a quantidade de reistros por página. Mínimo 1 e máximo 50</param>
+            <response code="200">Retorna a lista de item no cardápio</response>
+            <response code="204">Caso não haja item no cardápio</response>   
+        </member>
+        <member name="M:ExemploApiItemCardapio.Controllers.V1.ItensController.Obter(System.Guid)">
+            <summary>
+            Buscar um item no cardápio pelo seu Id
+            </summary>
+            <param name="idItem">Id do item no cardápio buscado</param>
+            <response code="200">Retorna o item no cardápio filtrado</response>
+            <response code="204">Caso não haja item no cardápio com este id</response>   
+        </member>
+        <member name="M:ExemploApiItemCardapio.Controllers.V1.ItensController.InserirItem(ExemploApiItemCardapio.InputModel.ItemInputModel)">
+            <summary>
+            Inserir um item no cardápio
+            </summary>
+            <param name="itemInputModel">Dados do item no cardápio a ser inserido</param>
+            <response code="200">Caso o item no cardápio seja inserido com sucesso</response>
+            <response code="422">Caso já exista um item no cardápio com mesmo nome para a mesma produtora</response>   
+        </member>
+        <member name="M:ExemploApiItemCardapio.Controllers.V1.ItensController.AtualizarItem(System.Guid,ExemploApiItemCardapio.InputModel.ItemInputModel)">
+            <summary>
+            Atualizar um item no cardápio
+            </summary>
+            /// <param name="idItem">Id do item no cardápio a ser atualizado</param>
+            <param name="itemInputModel">Novos dados para atualizar o item no cardápio indicado</param>
+            <response code="200">Caso o item no cardápio seja atualizado com sucesso</response>
+            <response code="404">Caso não exista um item no cardápio com este Id</response>   
+        </member>
+        <member name="M:ExemploApiItemCardapio.Controllers.V1.ItensController.AtualizarItem(System.Guid,System.Double)">
+            <summary>
+            Atualizar o preço de um item no cardápio
+            </summary>
+            /// <param name="idItem">Id do item no cardápio a ser atualizado</param>
+            <param name="preco">Novo preço do item no cardápio</param>
+            <response code="200">Caso o preço seja atualizado com sucesso</response>
+            <response code="404">Caso não exista um item no cardápio com este Id</response>   
+        </member>
+        <member name="M:ExemploApiItemCardapio.Controllers.V1.ItensController.ApagarItem(System.Guid)">
+            <summary>
+            Excluir um item no cardápio
+            </summary>
+            /// <param name="idItem">Id do item no cardápio a ser excluído</param>
+            <response code="200">Caso o preço seja atualizado com sucesso</response>
+            <response code="404">Caso não exista um item no cardápio com este Id</response>   
+        </member>
+    </members>
+</doc>
